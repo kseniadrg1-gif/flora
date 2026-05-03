@@ -6,9 +6,9 @@ export default function Shop() {
       {/* HEADER */}
       <header className="topbar">
         <nav>
-          <span>каталог</span>
-          <span>уход</span>
-          <span>доставка</span>
+          <button className="nav-btn">каталог</button>
+          <button className="nav-btn">уход</button>
+          <button className="nav-btn">доставка</button>
         </nav>
       </header>
 
@@ -21,7 +21,7 @@ export default function Shop() {
           <span>r</span>
           <span>a</span>
         </h1>
-        <button>Выбрать растение</button>
+        <button className="select-plant-btn">Выбрать растение</button>
 
         <div className="hero-bottom">
           <div className="hero-text">
@@ -31,9 +31,9 @@ export default function Shop() {
           </div>
 
           <div className="categories">
-            <span>Лиственное</span>
-            <span>Суккуленты</span>
-            <span>Деревья</span>
+            <button className="cat-btn">Лиственное</button>
+            <button className="cat-btn">Суккуленты</button>
+            <button className="cat-btn">Деревья</button>
           </div>
         </div>
       </section>
@@ -80,23 +80,53 @@ export default function Shop() {
       {/* TYPES */}
       <section className="types">
         <h2>РАЗНОВИДНОСТЬ РАСТЕНИЙ</h2>
-
         <div className="types-grid">
           <div>декоративно лиственные</div>
           <div>суккуленты</div>
           <div>деревья</div>
         </div>
+        <p>выбери что по душе</p>
       </section>
 
       {/* PRODUCTS */}
-      <Products title="ЛИСТВЕННЫЕ" />
-      <Products title="СУККУЛЕНТЫ" />
-      <Products title="КОМНАТНЫЕ ДЕРЕВЬЯ" />
+      <Products
+        title="ЛИСТВЕННЫЕ"
+        description="создают уютную атмосферу благодаря своей пышной зелени и разнообразию форм, идеально подходя для любого интерьера"
+        plants={[
+          { name: "Замножулькас", price: "5000Р" },
+          { name: "Лист Скрипки Рис", price: "5000Р" },
+          { name: "Пальма Кентини", price: "5000Р" },
+          { name: "Черное растение ZZ", price: "5000Р" },
+        ]}
+      />
+      <Products
+        title="СУККУЛЕНТЫ"
+        description="Они умеют целый месяц обходиться без влаги, не боятся яркого солнца, растут на камнях и скалах, где совсем нет плодородной почвы"
+        plants={[
+          { name: "Большой Перуанский Яблоневый Кактус", price: "3500Р" },
+          { name: "Растение Процветания Слонового Куста", price: "3500Р" },
+          { name: "Prickly Pear Cactus 'Joseph's Coat'", price: "3500Р" },
+          { name: "Rhipsalis Baccifera Mistletoe Cactus", price: "3500Р" },
+        ]}
+      />
+      <Products
+        title="КОМНАТНЫЕ ДЕРЕВЬЯ"
+        description="они помогают людям чувствовать себя ближе к природе, особенно в городской среде"
+        plants={[
+          { name: "Крупное растение Юкки", price: "4500Р" },
+          { name: "Лимонное дерево", price: "4500Р" },
+          { name: "Крупная Драцена Тростниковая", price: "5000Р" },
+          { name: "Дерево Dragaena Marginata", price: "5000Р" },
+        ]}
+      />
 
       {/* CARE */}
       <section className="care">
         <h2>СРЕДСТВА ДЛЯ УХОДА</h2>
-
+        <p>
+          Полное руководство по уходу для каждого растения описанно в
+          карточке{" "}
+        </p>
         <div className="care-grid">
           <div />
           <div />
@@ -106,25 +136,71 @@ export default function Shop() {
       </section>
 
       {/* FOOTER */}
+      {/* FOOTER */}
       <footer className="footer">
-        <p>LovLive</p>
-        <p>89270833550</p>
+        <div className="footer-columns">
+          {/* Колонка 1 */}
+          <div className="footer-col">
+            <h3>LovLive</h3>
+            <p>89270833550</p>
+            <p>телефон call-центра</p>
+          </div>
+
+          {/* Колонка 2 */}
+          <div className="footer-col">
+            <h4>о нас</h4>
+            <ul>
+              <li>политика обработки персональных данных</li>
+              <li>документы сайта</li>
+              <li>самовывоз</li>
+            </ul>
+          </div>
+
+          {/* Колонка 3 */}
+          <div className="footer-col">
+            <h4>клиентам</h4>
+            <ul>
+              <li>вопросы-ответы</li>
+              <li>доставка</li>
+              <li>возврат товара</li>
+            </ul>
+          </div>
+
+          {/* Колонка 4 */}
+          <div className="footer-col">
+            <h4>контакты</h4>
+            <ul>
+              <li>общие контакты для предложений по ассортименту</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Нижняя строка с cookies */}
+        <div className="footer-cookies">
+          <p>
+            Мы используем cookies. Используя сайт, вы соглашаетесь с обработкой
+            данных с целью сбора аналитики. Cookies можно отключить в любой
+            момент в настройках вашего браузера.
+          </p>
+        </div>
       </footer>
     </div>
   );
 }
 
-function Products({ title }) {
+function Products({ title, description, plants }) {
   return (
     <section className="products">
       <h2>{title}</h2>
-
+      {description && <p>{description}</p>}
       <div className="cards">
-        {Array(4)
-          .fill(0)
-          .map((_, i) => (
-            <div key={i} className="card" />
-          ))}
+        {plants.map((plant, index) => (
+          <div key={index} className="card-item">
+            <div className="card"></div>
+            <div className="card-name">{plant.name}</div>
+            <div className="card-price">{plant.price}</div>
+          </div>
+        ))}
       </div>
     </section>
   );
