@@ -10,6 +10,7 @@
 
 body {
   background: #000;
+  background-image: url("/wirefrime.png");
   color: #fff;
   font-family: "Philosopher", sans-serif;
   font-size: 18px;
@@ -217,9 +218,19 @@ button {
 }
 
 .card {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   background: #cfc7b3;
+}
+
+.care-card {
+  position: relative;
+}
+
+.card-fav {
+  position: absolute;
+  right: 10px;
 }
 
 .card-item {
@@ -251,10 +262,17 @@ button {
 }
 
 .care-grid div {
+  position: relative;
   width: clamp(150px, 20vw, 259px);
   height: clamp(150px, 20vw, 259px);
   background: #cfc7b3;
   border-radius: 50%;
+}
+
+.care-grid div img {
+  position: absolute;
+  top: 32px;
+  right: 53px;
 }
 
 .care p {
@@ -274,6 +292,7 @@ button {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer-col {
@@ -314,14 +333,17 @@ button {
 .footer-cookies {
   max-width: 1200px;
   margin: 40px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 20px 0;
   text-align: center;
 }
 
 .footer-cookies p {
   font-size: 12px;
   color: rgba(229, 222, 202, 0.5);
+}
+
+.description {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -365,8 +387,4 @@ button {
     height: auto;
     padding: 20px;
   }
-}
-
-.description {
-  text-align: center;
 }
