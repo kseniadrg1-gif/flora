@@ -8,11 +8,18 @@ export default function Hero() {
     navigate("/", { state: { scrollTo: "leafy" } });
   };
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById("delivery-form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="hero-delivery">
       <div className="top-left">
         <button className="logo-btn" onClick={() => navigate("/")}>
-          LovLiv
+          LovLive
         </button>
       </div>
 
@@ -20,7 +27,7 @@ export default function Hero() {
         <button className="nav-link" onClick={() => navigate("/about")}>
           О нас
         </button>
-        <button className="nav-link" onClick={() => navigate("/order")}>
+        <button className="nav-link" onClick={scrollToForm}>
           Оставить заявку
         </button>
         <a href="tel:+79270183330" className="phone-link">

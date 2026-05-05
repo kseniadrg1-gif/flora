@@ -1,4 +1,11 @@
 export default function Hero({ onSelectPlant }) {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="hero">
       <h1>
@@ -20,9 +27,18 @@ export default function Hero({ onSelectPlant }) {
         </div>
 
         <div className="categories">
-          <button className="cat-btn">Лиственное</button>
-          <button className="cat-btn">Суккуленты</button>
-          <button className="cat-btn">Деревья</button>
+          <button className="cat-btn" onClick={() => scrollToSection("leafy")}>
+            Лиственное
+          </button>
+          <button
+            className="cat-btn"
+            onClick={() => scrollToSection("succulents")}
+          >
+            Суккуленты
+          </button>
+          <button className="cat-btn" onClick={() => scrollToSection("trees")}>
+            Деревья
+          </button>
         </div>
       </div>
     </section>

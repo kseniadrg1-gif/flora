@@ -37,6 +37,7 @@ button {
   border: none;
   color: inherit;
   cursor: pointer;
+  text-align: left;
 }
 
 /* ==== LAYOUT ==== */
@@ -334,10 +335,12 @@ button {
 .footer-col ul {
   padding: 0;
   margin: 0;
+  text-align: left;
 }
 
 .footer-col li {
   margin-bottom: 8px;
+  text-align: left;
 }
 
 .footer-cookies {
@@ -403,4 +406,58 @@ button {
 a {
   text-decoration: none;
   color: rgba(229, 222, 202, 0.7);
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #00d2ff;
+  position: relative;
+  overflow-y: visible;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  color: #00d2ff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.modal-content p {
+  color: rgba(229, 222, 202, 0.8);
+  line-height: 1.5;
 }

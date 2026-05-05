@@ -13,7 +13,7 @@ export default function Form() {
   };
 
   return (
-    <section className="form-delivery">
+    <section id="delivery-form" className="form-delivery">
       <div className="container">
         <h2>Подберём удобный способ доставки</h2>
         <p>Оставьте телефон — согласуем детали и ответим на вопросы.</p>

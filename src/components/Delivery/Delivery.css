@@ -1,5 +1,6 @@
 /* ==== FONTS ==== */
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
+@import url("./Media.css");
 
 .delivery-page {
   background: #000 url("/delivery.png") center top no-repeat;
@@ -59,6 +60,10 @@
   font-family: "Philosopher", sans-serif;
   cursor: pointer;
   font-weight: bold;
+}
+
+.logo-btn:hover {
+  color: #00d2ff;
 }
 
 .top-right {
@@ -236,52 +241,4 @@
   text-decoration: none;
   font-size: 28px;
   margin-right: 15px;
-}
-
-/* Адаптив */
-@media (max-width: 768px) {
-  .grid-3,
-  .grid-4,
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .top-left {
-    top: 15px;
-    left: 15px;
-  }
-  .top-right {
-    top: 15px;
-    right: 15px;
-    gap: 12px;
-  }
-  .nav-link,
-  .phone-link {
-    font-size: 12px;
-  }
-  .hero-content {
-    padding: 0 20px;
-    margin-top: 100px;
-  }
-  .hero-content h1 {
-    font-size: 32px;
-  }
-  .hero-content p {
-    font-size: 16px;
-  }
-  .hero-content,
-  .hero-content h1,
-  .hero-content p {
-    text-align: center;
-  }
-
-  .stats-delivery h3 {
-    font-size: 36px;
-  }
-  .about-delivery h2,
-  .form-delivery h2 {
-    font-size: 28px;
-  }
 }
