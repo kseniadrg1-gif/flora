@@ -1,0 +1,40 @@
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .categories {
+    justify-content: center;
+  }
+
+  .types-grid div {
+    min-width: 200px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-col {
+    text-align: center;
+  }
+  .footer-col ul {
+    text-align: center;
+  }
+  .footer-cookies p {
+    font-size: 10px;
+  }
+}
+
