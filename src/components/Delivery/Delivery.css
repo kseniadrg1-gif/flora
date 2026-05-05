@@ -1,0 +1,287 @@
+/* ==== FONTS ==== */
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
+
+.delivery-page {
+  background: #000 url("/delivery.png") center top no-repeat;
+  color: #fff;
+  font-family: "Philosopher", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Кнопки */
+.btn-primary {
+  background: #0f3d3e;
+  border: 1px solid #00d2ff;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: "Philosopher", sans-serif;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: #00d2ff;
+  color: #000;
+}
+
+/* Сетки */
+.grid-3 {
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.top-left {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+}
+
+.logo-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 40px;
+  font-family: "Philosopher", sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.top-right {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Philosopher", sans-serif;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: #00d2ff;
+}
+
+.phone-link {
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Philosopher", sans-serif;
+}
+
+.hero-content {
+  margin: 100px;
+  max-width: 600px;
+  padding-left: 60px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: rgba(229, 222, 202, 0.8);
+}
+
+/* Features */
+.hero-delivery {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: 80px 20px 0 20px;
+}
+
+.features-delivery {
+  text-align: center;
+  padding: 0 20px 60px 20px;
+  border-top: none;
+  background: none;
+}
+
+.features-delivery h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.features-delivery p {
+  color: rgba(229, 222, 202, 0.8);
+}
+
+/* About */
+.about-delivery {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 210, 255, 0.05);
+}
+
+.about-delivery h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.about-delivery p {
+  line-height: 1.6;
+}
+
+/* Stats */
+.stats-delivery {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.stats-delivery h3 {
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.stats-delivery p {
+  color: rgba(229, 222, 202, 0.7);
+}
+
+/* Form */
+.form-delivery {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 210, 255, 0.05);
+}
+
+.form-delivery h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.form-delivery p {
+  margin-bottom: 30px;
+  color: rgba(229, 222, 202, 0.8);
+}
+
+.form-delivery form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-delivery input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  background: #1a1a1a;
+  border: 1px solid #00d2ff;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Philosopher", sans-serif;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer-delivery {
+  padding: 0 20px;
+  border-top: 1px solid rgba(0, 210, 255, 0.3);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-delivery h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.footer-delivery h4 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-delivery p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(229, 222, 202, 0.7);
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 28px;
+  margin-right: 15px;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .grid-3,
+  .grid-4,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .top-left {
+    top: 15px;
+    left: 15px;
+  }
+  .top-right {
+    top: 15px;
+    right: 15px;
+    gap: 12px;
+  }
+  .nav-link,
+  .phone-link {
+    font-size: 12px;
+  }
+  .hero-content {
+    padding: 0 20px;
+    margin-top: 100px;
+  }
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+  .hero-content,
+  .hero-content h1,
+  .hero-content p {
+    text-align: center;
+  }
+
+  .stats-delivery h3 {
+    font-size: 36px;
+  }
+  .about-delivery h2,
+  .form-delivery h2 {
+    font-size: 28px;
+  }
+}

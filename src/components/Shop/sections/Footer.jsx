@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -21,7 +23,11 @@ export default function Footer() {
           <h4>клиентам</h4>
           <ul>
             <li>вопросы-ответы</li>
-            <li>доставка</li>
+            <li>
+              <Link to="/delivery" className="footer-link">
+                доставка
+              </Link>
+            </li>
             <li>возврат товара</li>
           </ul>
         </div>

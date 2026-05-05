@@ -1,9 +1,16 @@
-// Импортируем наш компонент Shop из папки components/Shop
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Shop from "./components/Shop/Shop";
+import Delivery from "./components/Delivery/Delivery";
 
-// В основном компоненте App просто показываем Shop
 function App() {
-  return <Shop />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Shop />} />
+        <Route path="/delivery" element={<Delivery />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

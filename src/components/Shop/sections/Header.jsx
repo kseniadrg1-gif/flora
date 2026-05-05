@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header({ onCatalogClick, onCareClick }) {
   return (
     <header className="topbar">
@@ -8,7 +10,9 @@ export default function Header({ onCatalogClick, onCareClick }) {
         <button className="nav-btn" onClick={onCareClick}>
           уход
         </button>
-        <button className="nav-btn">доставка</button>
+        <Link to="/delivery" className="nav-btn">
+          доставка
+        </Link>
       </nav>
     </header>
   );

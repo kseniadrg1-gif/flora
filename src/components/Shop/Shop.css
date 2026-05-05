@@ -395,3 +395,12 @@ button {
     font-size: 12px;
   }
 }
+
+.nav-btn {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(229, 222, 202, 0.7);
+}
