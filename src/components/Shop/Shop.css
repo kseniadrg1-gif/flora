@@ -186,17 +186,6 @@ button {
   justify-content: center;
 }
 
-.types-grid div {
-  flex: 1;
-  min-width: 250px;
-  border: 1px solid #ffffff;
-  padding: 30px 0;
-  height: 357px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
 /* ==== PRODUCTS — ОПТИМИЗИРОВАННЫЕ КАРТОЧКИ ==== */
 .products {
   padding: 40px 20px;
@@ -251,7 +240,7 @@ button {
 
 /* ==== CARE ==== */
 .care {
-  margin-top: 203px;
+  margin-top: 108px;
   text-align: center;
   padding: 80px 20px;
   position: relative;
@@ -446,8 +435,9 @@ a {
 
 .modal-content h2 {
   color: #00d2ff;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
+  font-size: 38px;
 }
 
 .modal-content h3 {
@@ -460,4 +450,26 @@ a {
 .modal-content p {
   color: rgba(229, 222, 202, 0.8);
   line-height: 1.5;
+}
+
+.type-card {
+  position: relative;
+  border: 1px solid white;
+}
+
+.type-card img {
+  width: 100%;
+  display: block;
+}
+
+.type-text {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background: none; /* ← убирает тень */
+  padding: 10px;
+  font-size: 18px;
 }

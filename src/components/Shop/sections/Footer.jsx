@@ -11,7 +11,6 @@ export default function Footer() {
           <div className="footer-col">
             <h3>LovLive</h3>
             <p>89270833550</p>
-            <p>телефон call-центра</p>
           </div>
 
           <div className="footer-col">
