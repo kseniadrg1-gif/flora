@@ -9,6 +9,7 @@ const Products = React.forwardRef(
         {plants.map((plant, index) => (
           <div key={index} className="card-item">
             <div className="card">
+              <img src={plant.img} alt={plant.name} className="card-img" />
               <img src="/Heart.png" alt="favorite" className="card-fav" />
             </div>
             <div className="card-name">{plant.name}</div>

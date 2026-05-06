@@ -4,7 +4,7 @@ import { leafyPlants, succulents, trees } from "../data/productsData";
 
 export default function AllProducts({ productsRef }) {
   return (
-    <>
+    <div className="all-products">
       <Products
         id="leafy"
         ref={productsRef}
@@ -24,6 +24,6 @@ export default function AllProducts({ productsRef }) {
         description="они помогают людям чувствовать себя ближе к природе, особенно в городской среде"
         plants={trees}
       />
-    </>
+    </div>
   );
 }
