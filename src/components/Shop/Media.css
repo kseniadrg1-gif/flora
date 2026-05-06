@@ -1,4 +1,28 @@
+@media (max-width: 1100px) {
+  footer.footer {
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page .cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .card {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 768px) {
+  .care-card {
+    width: 150px;
+  }
+  .price__care {
+    font-size: 12px;
+  }
+
   .hero {
     padding: 60px 20px;
   }
@@ -38,3 +62,8 @@
   }
 }
 
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

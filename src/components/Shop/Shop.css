@@ -1,5 +1,6 @@
 /* ==== FONTS ==== */
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Montserrat:wght@100..900&family=Philosopher:wght@400;700&family=Roboto:wght@100..900&display=swap");
+@import url("./Media.css");
 
 /* ==== BASE ==== */
 * {
@@ -276,25 +277,13 @@ button {
   margin-right: auto;
 }
 
-@media (max-width: 768px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
 .card {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   background: #cfc7b3;
+  border: 1px solid white;
 }
-
 .card-fav {
   position: absolute;
   top: 10px;
@@ -366,15 +355,6 @@ button {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .care-card {
-    width: 150px;
-  }
-  .price__care {
-    font-size: 12px;
-  }
-}
-
 /* ==== FOOTER ==== */
 .footer {
   background: #000;
@@ -386,7 +366,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -429,7 +408,6 @@ button {
 .footer-cookies {
   max-width: 1200px;
   margin: 40px auto 0;
-  padding: 20px 20px 0;
   text-align: center;
 }
 
