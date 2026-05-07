@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 export default function Header({ onCatalogClick, onCareClick }) {
   return (
     <header
+      className="cap"
       style={{
         display: "flex",
         justifyContent: "space-between",

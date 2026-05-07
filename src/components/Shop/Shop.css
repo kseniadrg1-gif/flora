@@ -254,6 +254,7 @@ button {
 .products {
   background: transparent;
   padding: 40px 0;
+  border-top: none;
 }
 
 .products p {
@@ -371,7 +372,6 @@ button {
 
 .footer-columns {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
