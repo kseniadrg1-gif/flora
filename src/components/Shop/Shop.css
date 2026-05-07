@@ -226,12 +226,10 @@ button {
   position: relative;
   border: 1px solid white;
   flex: 1;
-  min-width: 250px;
   overflow: hidden;
 }
 
 .type-card img {
-  width: 100%;
   display: block;
 }
 
@@ -284,6 +282,24 @@ button {
   background: #cfc7b3;
   border: 1px solid white;
 }
+
+.care-fav {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+}
+
+.care-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .card-fav {
   position: absolute;
   top: 10px;
@@ -291,6 +307,7 @@ button {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  z-index: 5;
 }
 
 .card-item {
@@ -339,15 +356,7 @@ button {
   aspect-ratio: 1 / 1;
   background: #cfc7b3;
   border-radius: 50%;
-}
-
-.care-fav {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+  overflow: hidden;
 }
 
 .price__care {

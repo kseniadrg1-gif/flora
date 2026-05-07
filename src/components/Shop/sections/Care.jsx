@@ -8,6 +8,11 @@ const Care = React.forwardRef((props, ref) => (
       <div>
         <div className="care-card">
           <img src="/Heart.png" alt="favorite" className="care-fav" />
+          <img
+            src="/care/кокосовый субстрат.webp"
+            alt="Кокосовый субстрат"
+            className="care-product-img"
+          />
         </div>
         <p className="price__care">
           Кокосовый субстрат <br /> 200₽
@@ -16,6 +21,11 @@ const Care = React.forwardRef((props, ref) => (
       <div>
         <div className="care-card">
           <img src="/Heart.png" alt="favorite" className="care-fav" />
+          <img
+            src="/care/насадка.webp"
+            alt="Насадка рассеиватель"
+            className="care-product-img"
+          />
         </div>
         <p className="price__care">
           Насадка рассеиватель <br /> 200₽
@@ -24,17 +34,23 @@ const Care = React.forwardRef((props, ref) => (
       <div>
         <div className="care-card">
           <img src="/Heart.png" alt="favorite" className="care-fav" />
+          <img src="/care/компост.webp" className="care-product-img" />
         </div>
         <p className="price__care">
-          Драцена <br /> 5000₽
+          Компост <br /> 5000₽
         </p>
       </div>
       <div>
         <div className="care-card">
           <img src="/Heart.png" alt="favorite" className="care-fav" />
+          <img
+            src="/care/сульфат калия.webp"
+            alt="Сульфат калия"
+            className="care-product-img"
+          />
         </div>
         <p className="price__care">
-          Dracaena Marginata <br /> 5000₽
+          Сульфат калия <br /> 5000₽
         </p>
       </div>
     </div>
