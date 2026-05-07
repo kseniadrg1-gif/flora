@@ -2,8 +2,17 @@ import { Link } from "react-router-dom";
 
 export default function Header({ onCatalogClick, onCareClick }) {
   return (
-    <header className="topbar">
-      <nav>
+    <header
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "20px 100px",
+      }}
+    >
+      <span>LovLive</span>
+
+      <div style={{ display: "flex", gap: "40px" }}>
         <button className="nav-btn" onClick={onCatalogClick}>
           каталог
         </button>
@@ -13,7 +22,13 @@ export default function Header({ onCatalogClick, onCareClick }) {
         <Link to="/delivery" className="nav-btn">
           доставка
         </Link>
-      </nav>
+      </div>
+
+      <img
+        src="/icon/profile-icon.png"
+        alt="Личный кабинет"
+        style={{ width: "24px", height: "24px", cursor: "pointer" }}
+      />
     </header>
   );
 }

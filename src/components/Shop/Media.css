@@ -24,11 +24,22 @@
   .card-img {
     width: 100%;
     height: auto;
+    align-items: center;
   }
-  .care-card {
+  .type-card img {
+    object-position: center;
+  }
+
+  .type-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .care-card {
     width: 100px;
     border: 1px solid white;
-  }
+  } */
 
   .price__care {
     font-size: 12px;
@@ -51,16 +62,6 @@
     height: auto;
   }
 
-  .footer-columns {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer-col {
-    text-align: center;
-  }
-  .footer-col ul {
-    text-align: center;
-  }
   .footer-cookies p {
     font-size: 10px;
   }

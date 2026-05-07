@@ -66,8 +66,9 @@ button {
 .hero {
   text-align: center;
   background: url("/background/1.png") center/cover no-repeat;
-  padding: 80px 20px 100px 20px;
+  padding: 130px 20px 100px 20px;
   width: 100%;
+  border-top: 1px solid #9d9b9b;
 }
 
 .hero h1 {
@@ -97,7 +98,6 @@ button {
 
 .hero-bottom {
   margin-top: 80px;
-  display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 40px;
@@ -215,7 +215,6 @@ button {
   display: flex;
   gap: 33px;
   margin-top: 40px;
-  flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
   margin-left: auto;
@@ -225,7 +224,6 @@ button {
 .type-card {
   position: relative;
   border: 1px solid white;
-  flex: 1;
   overflow: hidden;
 }
 
