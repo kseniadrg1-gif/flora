@@ -19,9 +19,14 @@
   body {
     font-size: 14px !important;
   }
+  .why {
+    padding: 40px 20px !important;
+  }
+  .all-products {
+    padding: 40px 20px !important;
+  }
   .hero-text {
-    max-width: 37% !important;
-    margin-left: 70px;
+    margin-left: 50px;
   }
   .card {
     max-width: 240px;
@@ -48,16 +53,12 @@
   }
 
   .hero {
-    padding: 60px 20px;
+    padding: 60px 0 !important;
   }
 
   .hero-bottom {
     flex-direction: column;
     align-items: center;
-  }
-
-  .categories {
-    justify-content: center;
   }
 
   .types-grid div {
@@ -70,6 +71,10 @@
 }
 
 @media (max-width: 640px) {
+  .hero-text {
+    margin-left: 10px;
+    max-width: 200px !important;
+  }
   .footer-columns {
     flex-wrap: wrap;
   }
@@ -78,17 +83,24 @@
   }
 }
 
+@media (max-width: 600px) {
+  .hero-text {
+    margin-left: 15px;
+  }
+}
+
 @media (max-width: 480px) {
+  .hero-text {
+    display: none;
+  }
   .cards {
     grid-template-columns: 1fr;
   }
 
   .categories {
+    justify-content: center !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
   }
 }
 @media (max-width: 430px) {

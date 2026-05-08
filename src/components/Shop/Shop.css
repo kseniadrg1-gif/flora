@@ -125,10 +125,10 @@ button {
 
 .categories {
   flex: 1;
-  display: flex;
   gap: 20px;
   justify-content: flex-end;
   flex-wrap: wrap;
+  margin-right: 15px;
 }
 
 /* ==== WHY (фон 2) ==== */
