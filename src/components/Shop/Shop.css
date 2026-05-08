@@ -309,6 +309,10 @@ button {
   z-index: 5;
 }
 
+.care-fav.liked {
+  filter: none;
+}
+
 .card-item {
   text-align: center;
   max-width: 100%;
@@ -342,11 +346,8 @@ button {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 40px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .care-card {

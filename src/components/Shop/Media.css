@@ -70,6 +70,12 @@
   }
 }
 
+@media (max-width: 740px) {
+  .why-grid div:not(:last-child)::after {
+    display: none;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-text {
     margin-left: 10px;
@@ -90,6 +96,12 @@
 }
 
 @media (max-width: 480px) {
+  .modal-content h2 {
+    font-size: 20px !important;
+  }
+  .care-card {
+    width: 155px !important;
+  }
   .hero-text {
     display: none;
   }
