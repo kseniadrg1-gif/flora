@@ -24,7 +24,7 @@ export default function Hero() {
       </div>
 
       <div className="top-right">
-        <button className="nav-link" onClick={() => navigate("/about")}>
+        <button className="nav-link" onClick={() => navigate("/info")}>
           О нас
         </button>
         <button className="nav-link" onClick={scrollToForm}>

@@ -1,0 +1,45 @@
+.info-page {
+  background: #000;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.back-btn {
+  background: none;
+
+  color: #719d52;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+.info-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.info-container h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #719d52;
+}
+
+.info-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: rgba(229, 222, 202, 0.9);
+}
+
+.signature {
+  margin-top: 40px;
+  font-style: italic;
+  color: #00d2ff;
+}
+@media (max-width: 480px) {
+  font-size: 12px;
+}
