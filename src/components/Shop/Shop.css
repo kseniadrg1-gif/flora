@@ -91,7 +91,7 @@ button {
   margin-top: 40px;
   padding: 12px 24px;
   background: #0f3d3e;
-  border: 1px solid #888;
+  border: 1px solid #fffdfd;
   color: #fff;
   cursor: pointer;
 }
@@ -124,7 +124,7 @@ button {
 }
 
 .categories {
-  flex: 1;
+  display: flex;
   gap: 20px;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -178,29 +178,6 @@ button {
   font-family: "Philosopher", sans-serif;
   font-size: clamp(32px, 5vw, 64px);
   margin-bottom: 10px;
-}
-
-/* ==== STATS (фон 2) ==== */
-.stats-delivery {
-  text-align: center;
-  background: url("/background/2.png") center/cover no-repeat;
-  padding: 60px 20px;
-  width: 100%;
-}
-
-.stats-delivery .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.stats-delivery h3 {
-  font-size: 48px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.stats-delivery p {
-  color: rgba(229, 222, 202, 0.7);
 }
 
 /* ==== TYPES (фон 3) ==== */
@@ -291,6 +268,9 @@ button {
   cursor: pointer;
   filter: brightness(0) invert(1);
 }
+.care-fav.liked {
+  filter: none !important;
+}
 
 .care-product-img {
   width: 100%;
@@ -307,10 +287,6 @@ button {
   height: 24px;
   cursor: pointer;
   z-index: 5;
-}
-
-.care-fav.liked {
-  filter: none;
 }
 
 .card-item {

@@ -9,6 +9,10 @@
   overflow-x: hidden;
 }
 
+.features-delivery .grid-3 div {
+  margin-top: 30px;
+}
+
 .container {
   margin: 0 auto;
   padding: 60px 20px;
@@ -16,9 +20,9 @@
 
 /* Кнопки */
 .btn-primary {
-  background: #0f3d3e;
-  border: 1px solid #00d2ff;
-  color: #fff;
+  background: #719d52;
+  border: 1px solid #ffffff;
+  color: #000000;
   padding: 12px 30px;
   font-size: 18px;
   cursor: pointer;
@@ -136,6 +140,7 @@
 }
 
 .features-delivery p {
+  margin-top: 5px;
   color: rgba(229, 222, 202, 0.8);
 }
 
