@@ -41,5 +41,7 @@
   color: #00d2ff;
 }
 @media (max-width: 480px) {
-  font-size: 12px;
+  .back-btn {
+    font-size: 12px;
+  }
 }
