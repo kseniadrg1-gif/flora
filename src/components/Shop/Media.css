@@ -96,6 +96,9 @@
 }
 
 @media (max-width: 480px) {
+  .type-text {
+    font-size: 12px !important;
+  }
   .modal-content h2 {
     font-size: 20px !important;
   }
