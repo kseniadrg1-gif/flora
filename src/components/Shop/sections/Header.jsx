@@ -19,7 +19,7 @@ export default function Header({ onCatalogClick, onCareClick }) {
     >
       <span>LovLive</span>
 
-      <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
+      <div style={{ display: "flex", gap: "22px", alignItems: "center" }}>
         <button className="nav-btn" onClick={onCatalogClick}>
           каталог
         </button>
