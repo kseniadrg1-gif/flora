@@ -9,16 +9,18 @@ export default function ProductModal({ product, onClose }) {
     setIsInCart(cart.some((item) => item.id === product?.id));
   }, [product]);
 
+  // В момент добавления в корзину, убедитесь, что product имеет уникальный id
   const addToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const productId = product.uniqueId || product.id || product.name;
 
     if (isInCart) {
-      const newCart = cart.filter((item) => item.id !== product.id);
+      const newCart = cart.filter((item) => item.id !== productId);
       localStorage.setItem("cart", JSON.stringify(newCart));
       setIsInCart(false);
     } else {
       const newItem = {
-        id: product.id,
+        id: productId,
         name: product.name,
         price: product.price,
         img: product.img,

@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 
 export default function Header({ onCatalogClick, onCareClick }) {
+  // Получаем количество товаров в корзине
+  const getCartCount = () => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    return cart.reduce((sum, item) => sum + item.quantity, 0);
+  };
+
   return (
     <header
       className="cap"
@@ -13,7 +19,7 @@ export default function Header({ onCatalogClick, onCareClick }) {
     >
       <span>LovLive</span>
 
-      <div style={{ display: "flex", gap: "40px" }}>
+      <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
         <button className="nav-btn" onClick={onCatalogClick}>
           каталог
         </button>
@@ -22,6 +28,10 @@ export default function Header({ onCatalogClick, onCareClick }) {
         </button>
         <Link to="/delivery" className="nav-btn">
           доставка
+        </Link>
+        <Link to="/cart" className="nav-btn" style={{ position: "relative" }}>
+          🛒
+          <span className="cart-badge">{getCartCount()}</span>
         </Link>
       </div>
 

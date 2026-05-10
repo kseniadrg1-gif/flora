@@ -11,7 +11,11 @@ const Products = React.forwardRef(({ id, title, description, plants }, ref) => {
   };
 
   const openModal = (plant) => {
-    setSelectedProduct(plant);
+    setSelectedProduct({
+      ...plant,
+      id: plant.uniqueId,
+      uniqueId: plant.uniqueId,
+    });
   };
 
   const closeModal = () => {
