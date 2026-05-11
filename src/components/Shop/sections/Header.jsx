@@ -1,11 +1,21 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header({ onCatalogClick, onCareClick }) {
-  // Получаем количество товаров в корзине
-  const getCartCount = () => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-    return cart.reduce((sum, item) => sum + item.quantity, 0);
-  };
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      setCartCount(count);
+    };
+
+    updateCartCount();
+    window.addEventListener("storage", updateCartCount);
+
+    return () => window.removeEventListener("storage", updateCartCount);
+  }, []);
 
   return (
     <header
@@ -19,7 +29,7 @@ export default function Header({ onCatalogClick, onCareClick }) {
     >
       <span>LovLive</span>
 
-      <div style={{ display: "flex", gap: "22px", alignItems: "center" }}>
+      <div style={{ display: "flex", gap: "40px", alignItems: "center" }}>
         <button className="nav-btn" onClick={onCatalogClick}>
           каталог
         </button>
@@ -31,15 +41,17 @@ export default function Header({ onCatalogClick, onCareClick }) {
         </Link>
         <Link to="/cart" className="nav-btn" style={{ position: "relative" }}>
           🛒
-          <span className="cart-badge">{getCartCount()}</span>
+          {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
         </Link>
       </div>
 
-      <img
-        src="/icon/profile-icon.png"
-        alt="Личный кабинет"
-        style={{ width: "24px", height: "24px", cursor: "pointer" }}
-      />
+      <Link to="/profile">
+        <img
+          src="/icon/profile-icon.png"
+          alt="Личный кабинет"
+          style={{ width: "24px", height: "24px", cursor: "pointer" }}
+        />
+      </Link>
     </header>
   );
 }

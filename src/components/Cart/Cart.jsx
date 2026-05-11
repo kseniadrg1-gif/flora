@@ -47,9 +47,29 @@ export default function Cart() {
       alert("Корзина пуста");
       return;
     }
+
+    // Сохраняем заказ в историю
+    const newOrder = {
+      date: new Date().toLocaleDateString(),
+      total: getTotalPrice(),
+      items: cartItems.map((item) => ({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders") || "[]");
+    existingOrders.push(newOrder);
+    localStorage.setItem("orders", JSON.stringify(existingOrders));
+
     alert(`Заказ оформлен! Сумма: ${getTotalPrice()}₽\nСкоро с вами свяжутся.`);
     clearCart();
-    navigate("/");
+    navigate("/profile");
+  };
+
+  const handleContinueShopping = () => {
+    navigate("/", { state: { scrollTo: "leafy" } });
   };
 
   return (
@@ -64,8 +84,8 @@ export default function Cart() {
         {cartItems.length === 0 ? (
           <div className="cart-empty">
             <p>Ваша корзина пуста</p>
-            <button className="btn-primary" onClick={() => navigate("/")}>
-              Перейти к покупкам
+            <button className="btn-primary" onClick={handleContinueShopping}>
+              Выбрать растение
             </button>
           </div>
         ) : (
