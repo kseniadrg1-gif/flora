@@ -48,10 +48,11 @@ export default function Cart() {
       return;
     }
 
-    // Сохраняем заказ в историю
+    // Сохраняем заказ в историю со статусом
     const newOrder = {
       date: new Date().toLocaleDateString(),
       total: getTotalPrice(),
+      status: "pending",
       items: cartItems.map((item) => ({
         name: item.name,
         price: item.price,

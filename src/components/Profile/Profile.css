@@ -37,10 +37,6 @@
   font-family: "Philosopher", sans-serif;
 }
 
-.logout-btn:hover {
-  text-decoration: underline;
-}
-
 /* Контент */
 .profile-content {
   display: flex;
@@ -366,4 +362,207 @@
   .toggle-switch {
     align-self: flex-end;
   }
+}
+
+/* Orders styles */
+.orders-header {
+  margin-bottom: 24px;
+}
+
+.orders-header h2 {
+  margin-bottom: 8px;
+}
+
+.orders-subtitle {
+  color: rgba(229, 222, 202, 0.6);
+  font-size: 14px;
+}
+
+.orders-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid #333;
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: rgba(229, 222, 202, 0.7);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.filter-btn.active {
+  background: #719d52;
+  border-color: #719d52;
+  color: #fff;
+}
+
+.order-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.order-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #333;
+}
+
+.order-number,
+.order-date,
+.order-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-label {
+  font-size: 11px;
+  color: rgba(229, 222, 202, 0.5);
+  letter-spacing: 1px;
+}
+
+.order-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.order-status {
+  margin-left: auto;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  align-self: center;
+}
+
+.status-pending {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.status-shipped {
+  background: rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+}
+
+.status-delivered {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.order-items-list {
+  padding: 16px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.order-item-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.item-meta {
+  font-size: 12px;
+  color: rgba(229, 222, 202, 0.5);
+}
+
+.order-item-quantity {
+  color: rgba(229, 222, 202, 0.7);
+  margin: 0 20px;
+}
+
+.order-item-price {
+  color: #719d52;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: right;
+}
+
+.order-delivery-info {
+  padding: 12px 20px;
+  background: rgba(113, 157, 82, 0.05);
+  border-bottom: 1px solid #333;
+  font-size: 13px;
+}
+
+.delivery-label {
+  color: rgba(229, 222, 202, 0.5);
+  margin-right: 8px;
+}
+
+.delivery-address {
+  color: rgba(229, 222, 202, 0.8);
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 20px;
+}
+
+.order-btn {
+  background: none;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.invoice-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.invoice-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.repeat-btn {
+  background: #719d52;
+  color: #fff;
+}
+
+.repeat-btn:hover {
+  background: #5a7d42;
+}
+
+.empty-orders-text {
+  text-align: center;
+  padding: 60px;
+  color: rgba(229, 222, 202, 0.5);
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 60px;
+  color: rgba(229, 222, 202, 0.5);
+}
+.back-btn {
+  margin-bottom: 10px;
+  text-decoration: none;
 }
