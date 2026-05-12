@@ -5,9 +5,31 @@ const Products = React.forwardRef(({ id, title, description, plants }, ref) => {
   const [liked, setLiked] = useState({});
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const toggleLike = (index, e) => {
+  const toggleLike = (index, e, plant) => {
     e.stopPropagation();
-    setLiked((prev) => ({ ...prev, [index]: !prev[index] }));
+
+    const newLiked = { ...liked, [index]: !liked[index] };
+    setLiked(newLiked);
+
+    // Сохраняем в localStorage для избранного
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    if (!newLiked[index]) {
+      // Удаляем из избранного
+      const updated = favorites.filter((item) => item.id !== plant.uniqueId);
+      localStorage.setItem("favorites", JSON.stringify(updated));
+    } else {
+      // Добавляем в избранное
+      if (!favorites.some((item) => item.id === plant.uniqueId)) {
+        favorites.push({
+          id: plant.uniqueId,
+          name: plant.name,
+          price: plant.price,
+          img: plant.img,
+        });
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      }
+    }
   };
 
   const openModal = (plant) => {
@@ -21,6 +43,17 @@ const Products = React.forwardRef(({ id, title, description, plants }, ref) => {
   const closeModal = () => {
     setSelectedProduct(null);
   };
+
+  // Загружаем избранное из localStorage при монтировании
+  React.useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const likedState = {};
+    plants.forEach((plant, idx) => {
+      const uniqueId = `${id}-${idx}`;
+      likedState[idx] = favorites.some((item) => item.id === uniqueId);
+    });
+    setLiked(likedState);
+  }, [id, plants]);
 
   // Добавляем данные по уходу для каждого растения
   const plantsWithCare = plants.map((plant, idx) => ({
@@ -49,7 +82,7 @@ const Products = React.forwardRef(({ id, title, description, plants }, ref) => {
                 <img src={plant.img} alt={plant.name} className="card-img" />
                 <div
                   className="card-fav"
-                  onClick={(e) => toggleLike(index, e)}
+                  onClick={(e) => toggleLike(index, e, plant)}
                   style={{
                     position: "absolute",
                     top: "10px",
@@ -62,6 +95,7 @@ const Products = React.forwardRef(({ id, title, description, plants }, ref) => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    zIndex: 10,
                   }}
                 >
                   {liked[index] ? "❤️" : "🤍"}

@@ -6,6 +6,7 @@ import Payment from "./sections/Payment";
 import Notifications from "./sections/Notifications";
 import Security from "./sections/Security";
 import Orders from "./sections/Orders";
+import Favorites from "./sections/Favorites";
 import "./Profile.css";
 
 export default function Profile() {
@@ -18,7 +19,6 @@ export default function Profile() {
     phone: "",
   });
 
-  // Функция для обновления данных пользователя
   const refreshUserData = () => {
     const saved = localStorage.getItem("userProfile");
     if (saved) {
@@ -28,8 +28,6 @@ export default function Profile() {
 
   useEffect(() => {
     refreshUserData();
-
-    // Слушаем событие обновления данных
     window.addEventListener("userDataUpdated", refreshUserData);
     return () => window.removeEventListener("userDataUpdated", refreshUserData);
   }, []);
@@ -48,6 +46,7 @@ export default function Profile() {
     { id: "notifications", name: "Уведомления" },
     { id: "security", name: "Безопасность" },
     { id: "orders", name: "Мои заказы" },
+    { id: "favorites", name: "Избранное" },
   ];
 
   return (
@@ -55,10 +54,10 @@ export default function Profile() {
       <div className="profile-container">
         <div className="profile-header">
           <div className="header-left">
+            <h1>LovLive</h1>
             <button className="back-btn" onClick={() => navigate("/")}>
               ←
             </button>
-            <h1>LovLive</h1>
           </div>
           <button className="logout-btn" onClick={handleLogout}>
             Выйти
@@ -99,6 +98,7 @@ export default function Profile() {
             {activeTab === "notifications" && <Notifications />}
             {activeTab === "security" && <Security />}
             {activeTab === "orders" && <Orders />}
+            {activeTab === "favorites" && <Favorites />}
           </main>
         </div>
       </div>
