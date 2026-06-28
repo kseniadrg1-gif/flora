@@ -1,9 +1,13 @@
+// src/components/Cart/Cart.jsx
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ConsentCheckbox from "../Shop/sections/ConsentCheckbox"; // ← импорт
 import "./Cart.css";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const [consentGiven, setConsentGiven] = useState(false); // ← состояние
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -45,6 +49,14 @@ export default function Cart() {
   const handleCheckout = () => {
     if (cartItems.length === 0) {
       alert("Корзина пуста");
+      return;
+    }
+
+    // ← ПРОВЕРКА СОГЛАСИЯ
+    if (!consentGiven) {
+      alert(
+        "Для оформления заказа необходимо согласие на обработку персональных данных",
+      );
       return;
     }
 
@@ -136,6 +148,14 @@ export default function Cart() {
                 <span>Итого:</span>
                 <span>{getTotalPrice()}₽</span>
               </div>
+
+              {/* ← ЧЕКБОКС СОГЛАСИЯ ЗДЕСЬ */}
+              <div className="cart-consent">
+                <ConsentCheckbox
+                  onChange={(isChecked) => setConsentGiven(isChecked)}
+                />
+              </div>
+
               <button className="btn-primary" onClick={handleCheckout}>
                 Оформить заказ
               </button>

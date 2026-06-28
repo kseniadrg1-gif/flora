@@ -213,3 +213,58 @@
     margin: 10px 0;
   }
 }
+
+/* src/components/Cart/Cart.css */
+
+/* Добавьте в конец файла */
+
+/* Согласие на обработку данных в корзине */
+.cart-consent {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(113, 157, 82, 0.2);
+  text-align: left;
+}
+
+.cart-consent .consent-checkbox label {
+  font-size: 14px;
+  color: rgba(229, 222, 202, 0.8);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.cart-consent .consent-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  accent-color: #719d52;
+  cursor: pointer;
+}
+
+.cart-consent .consent-link {
+  background: none;
+  border: none;
+  color: #719d52;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+  font-family: "Philosopher", sans-serif;
+}
+
+.cart-consent .consent-link:hover {
+  color: #5a7d42;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .cart-consent .consent-checkbox label {
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+}

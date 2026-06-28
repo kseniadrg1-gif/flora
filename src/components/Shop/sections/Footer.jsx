@@ -1,8 +1,26 @@
-import { useState } from "react";
+// src/components/Shop/sections/Footer.jsx
+
+import { useState, useEffect } from "react";
 import PrivacyModal from "./PrivacyModal";
+import OfferModal from "./OfferModal";
 
 export default function Footer() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isOfferModalOpen, setIsOfferModalOpen] = useState(false);
+
+  // Слушаем события из ConsentCheckbox
+  useEffect(() => {
+    const openPrivacy = () => setIsPrivacyModalOpen(true);
+    const openOffer = () => setIsOfferModalOpen(true);
+
+    window.addEventListener("openPrivacyModal", openPrivacy);
+    window.addEventListener("openOfferModal", openOffer);
+
+    return () => {
+      window.removeEventListener("openPrivacyModal", openPrivacy);
+      window.removeEventListener("openOfferModal", openOffer);
+    };
+  }, []);
 
   return (
     <>
@@ -10,60 +28,91 @@ export default function Footer() {
         <div className="footer-columns">
           <div className="footer-col">
             <h3>LovLive</h3>
-            <p>89270833550</p>
+            <p>+7-927-018-33-30</p>
+            <p>flora@gmail.com</p>
           </div>
 
           <div className="footer-col">
-            <h4>о нас</h4>
+            <h4>Юридическая информация</h4>
             <ul>
               <li>
                 <button
                   className="footer-link"
-                  onClick={() => setIsModalOpen(true)}
+                  data-modal="privacy"
+                  onClick={() => setIsPrivacyModalOpen(true)}
                 >
-                  политика обработки персональных данных
+                  Политика конфиденциальности
                 </button>
               </li>
-              <li>документы сайта</li>
-              <li>самовывоз</li>
+              <li>
+                <button
+                  className="footer-link"
+                  data-modal="offer"
+                  onClick={() => setIsOfferModalOpen(true)}
+                >
+                  Публичная оферта
+                </button>
+              </li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h4>клиентам</h4>
+            <h4>О нас</h4>
             <ul>
-              <li>вопросы-ответы</li>
+              <li>
+                <button
+                  className="footer-link"
+                  onClick={() => (window.location.href = "/info")}
+                >
+                  О магазине
+                </button>
+              </li>
               <li>
                 <button
                   className="footer-link"
                   onClick={() => (window.location.href = "/delivery")}
                 >
-                  доставка
+                  Доставка
                 </button>
               </li>
-              <li>возврат товара</li>
+              <li>Возврат товара</li>
             </ul>
           </div>
 
           <div className="footer-col">
-            <h4>контакты</h4>
+            <h4>Контакты</h4>
             <ul>
-              <li>общие контакты для предложений по ассортименту</li>
+              <li>Общие контакты для предложений</li>
+              <li>flora@gmail.com</li>
+              <li>+7-927-018-33-30</li>
             </ul>
           </div>
         </div>
 
         <div className="footer-cookies">
           <p>
-            Мы используем cookies. Используя сайт, вы соглашаетесь с обработкой
-            данных с целью сбора аналитики. Cookies можно отключить в любой
-            момент в настройках вашего браузера.
+            Используя сайт, вы соглашаетесь с обработкой персональных данных в
+            соответствии с 152-ФЗ «О персональных данных».
+          </p>
+          <p
+            style={{
+              marginTop: "8px",
+              fontSize: "11px",
+              color: "rgba(229,222,202,0.4)",
+            }}
+          >
+            © 2026 LovLive. Все права защищены.
           </p>
         </div>
       </footer>
+
       <PrivacyModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
+      <OfferModal
+        isOpen={isOfferModalOpen}
+        onClose={() => setIsOfferModalOpen(false)}
       />
     </>
   );
